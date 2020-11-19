@@ -10,6 +10,7 @@ class AnimeCard extends React.Component {
                 {charObj.name}
             </h2>
             <img src={charObj.img} alt={charObj.name} />
+            <h3>{charObj.show}</h3>
             </div>
         )
     }
