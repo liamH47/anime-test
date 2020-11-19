@@ -12,14 +12,13 @@ class AnimeContainer extends React.Component {
     }
 
     submitHandler = (charObj) => {
-        let newCharArray = [...this.state.characters, charObj]
-        this.setState({ characters: newCharArray})
-        console.log(newCharArray) 
-    }
+        this.setState({ characters: [...this.state.characters, charObj] });
+        console.log(charObj)
+    };
 
 
     render() {
-        let allAnimeCards = characterArray.map(charObj => <AnimeCard key={charObj.id} charObj={charObj} />)
+        let allAnimeCards = this.state.characters.map(charObj => <AnimeCard key={charObj.id} charObj={charObj} />)
         return (
            <div>
                <Form submitHandler={this.submitHandler}/>
